@@ -29,6 +29,24 @@ const idlength =8;
  *         author: Alexandr K. Dendney
  */
 
+/**
+ * @swagger
+ * /books:
+ *   get:
+ *     summary: Return the list of all the books
+ *     responses:
+ *       200:
+ *         description: The list of the books
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Book'
+ * 
+ */
+
+
 router.get("/", (req, res) => {
     const books = req.app.db.get("books")
 
